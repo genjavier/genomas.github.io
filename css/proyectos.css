@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24-07-2018, 1:35:35
+    Author     : javie
+*/
+
+ 
+*,*:before,*:after{box-sizing:border-box;}
+.section{
+  position:relative;
+  overflow:hidden;
+  height:100%;
+  padding:0 15%;  
+background: rgba(247,52,224,1);
+background: -moz-linear-gradient(-45deg, rgba(247,52,224,1) 0%, rgba(246,41,12,1) 37%, rgba(240,24,24,1) 61%, rgba(230,39,71,1) 87%, rgba(230,39,71,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(247,52,224,1)), color-stop(37%, rgba(246,41,12,1)), color-stop(61%, rgba(240,24,24,1)), color-stop(87%, rgba(230,39,71,1)), color-stop(100%, rgba(230,39,71,1)));
+background: -webkit-linear-gradient(-45deg, rgba(247,52,224,1) 0%, rgba(246,41,12,1) 37%, rgba(240,24,24,1) 61%, rgba(230,39,71,1) 87%, rgba(230,39,71,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(247,52,224,1) 0%, rgba(246,41,12,1) 37%, rgba(240,24,24,1) 61%, rgba(230,39,71,1) 87%, rgba(230,39,71,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(247,52,224,1) 0%, rgba(246,41,12,1) 37%, rgba(240,24,24,1) 61%, rgba(230,39,71,1) 87%, rgba(230,39,71,1) 100%);
+background: linear-gradient(135deg, rgba(247,52,224,1) 0%, rgba(246,41,12,1) 37%, rgba(240,24,24,1) 61%, rgba(230,39,71,1) 87%, rgba(230,39,71,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f734e0', endColorstr='#e62747', GradientType=1 );
+}
+.skew {
+  backface-visibility: hidden;
+  transform: skew(-16deg, 0);
+  overflow: hidden;
+  display: block;
+  width:25%;
+  height:100%;
+  position:relative;
+  float:left;
+  border-width:1px;
+  border-style:solid;
+  transition: all 0.3s;
+  cursor:pointer;
+  opacity:0.9;
+  box-shadow:0 0 18px -18px #000;
+}
+.skew + .skew{margin-left:-1px;}
+.skew:nth-child(1){background-color:#90aeff ;color:#90aeff}
+.skew:nth-child(2){background-color:#cefc86;color:#cefc86}
+.skew:nth-child(3){background-color:#60efb8;color:#60efb8}
+.skew:nth-child(4){background-color:#1cb78d;color:#1cb78d}
+
+.section.active .skew{width:20%}
+.section.active:not(.open) .skew:hover{
+  width:40%;
+  opacity:1;
+  box-shadow:0px 0px 18px -4px #000;
+  z-index:99;
+}
+.section.open .skew{width:1%}
+.section.open .skew:not(.open) > .straight{pointer-events:none;}
+.section.open .skew.open{
+  width:97%;
+  opacity:1;
+  box-shadow:0px 0px 18px -4px #000;
+  z-index:99;
+}
+
+
+.straight{
+  position:absolute;
+  color:#fff;
+  font-family:courier;
+  text-shadow:0 0px 1px #000;
+  transform: translate(-50%, -50%) skew(16deg,0);
+  display:inline-block;
+  top:50%;
+  left:50%;
+  transition: transform 0.2s, opacity 0.4s;
+  z-index:10;
+}
+
+
+
